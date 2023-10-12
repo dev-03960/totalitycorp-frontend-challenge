@@ -1,0 +1,19 @@
+@import "../../css-config/mixins.scss";
+
+.custom-button {
+    color: #ffffff; /* Equivalent to text-white in Tailwind CSS */
+    background-color: #007BFF; /* Set your desired primary color here */
+    &:hover {
+      background-color: #007BFF; /* Equivalent to hover:bg-primary in Tailwind CSS */
+    }
+    &:focus {
+      outline: none; /* Equivalent to focus:outline-none in Tailwind CSS */
+      box-shadow: 0 0 0 0.125rem rgba(0, 123, 255, 0.25); /* Equivalent to focus:ring-4 and focus:ring-blue-300 in Tailwind CSS */
+    }
+    font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
+    border-radius: 0.375rem; /* Equivalent to rounded-lg in Tailwind CSS */
+    font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
+    padding: 0.625rem 1.25rem; /* Equivalent to px-5 and py-2.5 in Tailwind CSS */
+    text-align: center;
+  }
+  

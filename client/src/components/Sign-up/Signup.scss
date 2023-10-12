@@ -1,0 +1,59 @@
+
+@import "../../css-config/mixins.scss";
+
+.Signup-container {
+    background-color: #f3f3f3; /* Set your desired light background color here */
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Signup-content {
+    background-color: #ffffff; /* Set your desired background color here */
+    width: 600px;
+    height: 600px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Set your desired shadow values here */
+    border-radius: 1rem; /* Set your desired border radius value here */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Signup-heading {
+    font-size: 2.25rem; /* Equivalent to text-4xl in Tailwind CSS */
+    font-weight: 800; 
+    margin-bottom: 0.5rem;/* Equivalent to font-extrabold in Tailwind CSS */
+  }
+  
+  .Signup-subheading {
+    font-size: 1.125rem; /* Equivalent to text-xl in Tailwind CSS */
+    font-weight: 300; /* Equivalent to font-light in Tailwind CSS */
+    margin-bottom: 2.5rem; /* Equivalent to mb-14 in Tailwind CSS */
+  }
+  
+  .Signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .Signup-link {
+    color: #007BFF; /* Set your desired primary color here */
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .Signup-input {
+    margin-bottom: 1.5rem; /* Equivalent to mb-6 in Tailwind CSS */
+    width: 75%; /* Equivalent to w-[75%] in Tailwind CSS */
+    &.is-invalid {
+     color : red;
+    }
+  }
+  .Signup-button {
+    width: 75%; /* Equivalent to w-[75%] in Tailwind CSS */
+    margin-bottom: 0.5rem; /* Equivalent to mb-2 in Tailwind CSS */
+  }

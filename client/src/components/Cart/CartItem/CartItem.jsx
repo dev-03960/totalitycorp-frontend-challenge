@@ -1,33 +1,64 @@
 import "./CartItem.scss";
 import prod from "../../../assets/products/earbuds-prod-1.webp";
 import { MdClose } from "react-icons/md";
+import { Context } from "../../../utils/context";
+import { useContext } from "react";
 const CartItem = () => {
+  const { cartItem,  handleCartProductQuantity,
+    handleRemoveFromCart} = useContext(Context);
+    console.log(cartItem);
   return (
     <>
     <div className="cart-products">
-      <div className="search-result-item">
-        <div className="image-container ">
-          <img src={prod} alt="" />
+            {cartItem?.map((item) => (
+                <div
+                    className="search-result-item"
+                    key={item.id}
+                    onClick={() => {}}
+                >
+                    <div className="image-container">
+                        <img
+                            src= {process.env.REACT_APP_STRIPE_APP_DEV_URL +
+                                item.attributes.img.data.attributes.url
+                            }
+                        />
+                    </div>
+                    <div className="prod-details">
+                        <span className="name">{item.attributes.title}</span>
+                        <MdClose
+                            className="close-btn"
+                            onClick={() => handleRemoveFromCart(item)}
+                        />
+                        <div className="quantity-buttons">
+                            <span
+                                onClick={() =>
+                                    handleCartProductQuantity("dec", item)
+                                }
+                            >
+                                -
+                            </span>
+                            <span>{item.attributes.quantity}</span>
+                            <span
+                                onClick={() =>
+                                    handleCartProductQuantity("inc", item)
+                                }
+                            >
+                                +
+                            </span>
+                        </div>
+                        <div className="text">
+                            <span>{item.attributes.quantity}</span>
+                            <span>x</span>
+                            <span className="highlight">
+                                <span>&#8377;</span>
+                                {item.attributes.Price *
+                                    item.attributes.quantity}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            ))}
         </div>
-        <div className="prod-details">
-          <span className="name">Earbuds pro</span>
-          <MdClose className="close-btn" />
-          <div className="quantity-buttons">
-            <span>-</span>
-            <span>5</span>
-            <span>+</span>
-          </div>
-          <div className="text">
-            <span>4</span>
-            <span>x</span>
-            <span className="highlight">
-              <span>&#8377;</span>
-              2000
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
     </>
   );
 };

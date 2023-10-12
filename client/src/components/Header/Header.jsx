@@ -8,6 +8,8 @@ import { TbSearch } from "react-icons/tb";
 import { CgShoppingCart } from "react-icons/cg";
 import { AiOutlineHeart } from "react-icons/ai";
 const Header = () => {
+    const navigate = useNavigate();
+    const { cartCount} = useContext(Context);
     const [scrollstick, setscrollstick] = useState(false);
     const [showCart, setShowCart] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
@@ -25,11 +27,11 @@ window.addEventListener("scroll",handleScrollbar);
             >
                 <div className="header-content">
                     <ul className="left">
-                        <li >Home</li>
-                        <li >About</li>
-                        <li>Categories</li>
+                        <li onClick={() => navigate("/")}>Home</li>
+                        <li onClick={() => navigate("/")}>About</li>
+                        <li onClick={() => navigate("/")}>Categories</li>
                     </ul>
-                    <div className="center" >
+                    <div className="center" onClick={() => navigate("/")}>
                         Dev-Shop
                     </div>
                     <div className="right">
@@ -40,7 +42,7 @@ window.addEventListener("scroll",handleScrollbar);
                             onClick={()=>{setShowCart(true)}}
                         >
                             <CgShoppingCart />
-                            <span>5</span>
+                            <span>{cartCount}</span>
                         </span>
                     </div>
                 </div>

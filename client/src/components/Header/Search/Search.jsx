@@ -1,62 +1,76 @@
 import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 import "./Search.scss";
-import prod from "../../../assets/products/earbuds-prod-1.webp"
+import prod from "../../../assets/products/earbuds-prod-1.webp";
+import useFetch from "../../../hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 const Search = ({ setShowSearch }) => {
-    const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("");
+const navigate = useNavigate();
+  const onChange = (e) => {
+    setQuery(e.target.value);
+  };
 
-    const onChange = (e) => {
-        setQuery(e.target.value);
-    };
+  let { data } = useFetch(
+    `/api/products?populate=*&filters[title][$contains]=${query}`
+);
 
-    return (
-        <div className="search-modal">
-            <div className="form-field">
-                <input
-                    autoFocus
-                    type="text"
-                    placeholder="Search for products"
-                    value={query}
-                    onChange={onChange}
-                />
-                <MdClose
-                    className="close-btn"
-                    onClick={() => setShowSearch(false)}
-                />
-            </div>
-            <div className="search-result-content">
-                
-                    <div className="start-msg">
-                        Start typing to see products you are looking for.
-                    </div>
-                
-                <div className="search-results">
+if (!query.length) {
+    data = null;
+}
+console.log(data);
+ 
+  return (
+    <div className="search-modal">
+      <div className="form-field">
+        <input
+          autoFocus
+          type="text"
+          placeholder="Search for products"
+          value={query}
+          onChange={onChange}
+        />
+        <MdClose className="close-btn" onClick={() => setShowSearch(false)} />
+      </div>
+      <div className="search-result-content">
+        <div className="start-msg">
+          Start typing to see products you are looking for.
+        </div>
+
+        <div className="search-results">
+        {data?.data?.map((item) => (
                         <div
                             className="search-result-item"
-                            
+                            key={item.id}
+                            onClick={() => {
+                                navigate("/product/" + item.id);
+                                setShowSearch(false);
+                            }}
                         >
                             <div className="image-container">
                                 <img
                                     src={
-                                       prod
+                                        process.env
+                                            .REACT_APP_STRIPE_APP_DEV_URL +
+                                        item.attributes.img.data.attributes
+                                            .url
                                     }
-                                    alt=""
                                 />
                             </div>
                             <div className="prod-details">
                                 <span className="name">
-                                   earbuds
+                                    {item.attributes.title}
                                 </span>
                                 <span className="desc">
-                                   So much description
+                                    {item.attributes.description}
                                 </span>
                             </div>
                         </div>
-                    
-                </div>
-            </div>
+                    ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Search;
