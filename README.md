@@ -58,6 +58,17 @@ The objective of this project is to develop a highly configurable UI with a focu
 ---
 *Note: This project approach documentation serves as a comprehensive guide to the technical aspects, components, and methodologies employed in the development of the TotalityCorp frontend challenge.*
 
+## Live Links and Additional Resources
+
+- **Frontend Live Link**: [TotalityCorp Frontend Challenge](https://totalitycorp-frontend-challenge-ljr2pwka0-dev-03960s-projects.vercel.app/)
+- **Backend Live Link**: [Dev Shop Backend](https://dev-shop-backend.vercel.app/)
+- **My Resume Ecommerce App**: [Shop 2 Day Ecommerce App](https://shop-2-day.vercel.app)
+
+---
+
+*Note: The above links point to live versions of the frontend and backend, providing easy access to the project. You can also find the backend source code on [GitHub](https://github.com/dev-03960/Dev-shop-backend/tree/main).*
+
+
   
 <img width="1440" alt="Screenshot 2023-10-13 at 12 48 47 AM" src="https://github.com/dev-03960/totalitycorp-frontend-challenge/assets/112404076/0cbf2b9e-61fe-48b9-96c4-1d38f5ba68e1">
 <img width="1440" alt="Screenshot 2023-10-13 at 12 48 44 AM" src="https://github.com/dev-03960/totalitycorp-frontend-challenge/assets/112404076/a455b2cc-b4f6-4058-829e-71e9e8035f0f">
