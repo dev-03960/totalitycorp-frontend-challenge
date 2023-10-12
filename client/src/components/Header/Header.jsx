@@ -8,7 +8,9 @@ import { TbSearch } from "react-icons/tb";
 import { CgShoppingCart } from "react-icons/cg";
 import { AiOutlineHeart } from "react-icons/ai";
 const Header = () => {
-    const [scrollstick, setscrollstick] = useState();
+    const [scrollstick, setscrollstick] = useState(false);
+    const [showCart, setShowCart] = useState(false);
+    const [showSearch, setShowSearch] = useState(false);
     const handleScrollbar =()=>{
         const offset = window.screenY;
         setscrollstick(offset>200?true:false);
@@ -31,10 +33,11 @@ window.addEventListener("scroll",handleScrollbar);
                         Dev-Shop
                     </div>
                     <div className="right">
-                        <TbSearch  />
+                        <TbSearch    onClick={()=>{setShowSearch(true)}}/>
                         <AiOutlineHeart />
                         <span
                             className="cart-icon"
+                            onClick={()=>{setShowCart(true)}}
                         >
                             <CgShoppingCart />
                             <span>5</span>
@@ -42,7 +45,9 @@ window.addEventListener("scroll",handleScrollbar);
                     </div>
                 </div>
             </header>
-    </>
+            {showCart && <Cart setShowCart = {setShowCart}/>}
+            {showSearch&& <Search setShowSearch = {setShowSearch}/>}
+    </> 
    
   );
 };

@@ -1,9 +1,9 @@
 import "./Products.scss";
 import Product from "./Product/Product";
-const Products = () => {
+const Products = ({headingTexts}) => {
     return <div className="products-container">
         <div className="sec-heading">
-Section-heading
+{headingTexts}
         </div>
         <div className="products">
             <Product/>
