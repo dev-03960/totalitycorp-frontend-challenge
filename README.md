@@ -60,8 +60,8 @@ The objective of this project is to develop a highly configurable UI with a focu
 
 ## Live Links and Additional Resources
 
-- **Frontend Live Link**: [TotalityCorp Frontend Challenge](https://totalitycorp-frontend-challenge-ljr2pwka0-dev-03960s-projects.vercel.app/)
-- **Backend Live Link**: [Dev Shop Backend](https://dev-shop-backend.vercel.app/)
+- **Frontend Live Link**: [TotalityCorp Frontend Challenge](https://totalitycorp-frontend-challenge-weld-seven.vercel.app/)
+- **Backend Live Link**: [Dev Shop Backend](https://dev-shop3-backend.onrender.com)
 - **My Resume Ecommerce App**: [Shop 2 Day Ecommerce App](https://shop-2-day.vercel.app)
 
 ---
